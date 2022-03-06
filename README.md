@@ -161,7 +161,7 @@ Esto significa que tendremos una manera gráfica de representar una situación, 
 
 Las **clases** se representan así:
 
-![clase.png](img\clase-1897e6cf-84b3-4432-926b-aff4fc4db122.jpg)
+![clase.png](.\img\clase-1897e6cf-84b3-4432-926b-aff4fc4db122.jpg)
 
 En la parte superior se colocan los atributos o propiedades, y debajo las operaciones de la clase. Notarás que el primer caracter con el que empiezan es un símbolo. Este denotará la visibilidad del atributo o método, esto es un término que tiene que ver con Encapsulamiento y veremos más adelante a detalle.
 
@@ -176,42 +176,42 @@ Una forma de representar las relaciones que tendrá un elemento con otro es a tr
 
 ##### Asociación
 
-![associacion.png](img\associacion-d2e1b691-b6e9-4854-85e2-d3ffdf0a9049.jpg)
+![associacion.png](.\img\associacion-d2e1b691-b6e9-4854-85e2-d3ffdf0a9049.jpg)
 
 Como su nombre lo dice, notarás que cada vez que esté referenciada este tipo de flecha significará que ese elemento contiene al otro en su definición. La flecha apuntará hacia la dependencia.
 
-![uml-relacion-asociacion.jpg](img\uml-relacion-asociacion-99b916c6-1f80-4b61-889a-ebf6e74f4f23.jpg)
+![uml-relacion-asociacion.jpg](.\img\uml-relacion-asociacion-99b916c6-1f80-4b61-889a-ebf6e74f4f23.jpg)
 
 Con esto vemos que la ClaseA está asociada y depende de la ClaseB.
 
 ##### Herencia
 
-![herencia.png](img\herencia-2eb98d5e-bcad-4162-b236-aa87eba20e76.jpg)
+![herencia.png](.\img\herencia-2eb98d5e-bcad-4162-b236-aa87eba20e76.jpg)
 
 Siempre que veamos este tipo de flecha se estará expresando la herencia.
 La dirección de la flecha irá desde el hijo hasta el padre.
 
-![herencia-clases.png](img\herencia-clases-53cb3117-def7-433f-adc5-4ad183d6b5e7.jpg)
+![herencia-clases.png](.\img\herencia-clases-53cb3117-def7-433f-adc5-4ad183d6b5e7.jpg)
 
 Con esto vemos que la ClaseB hereda de la ClaseA
 
 ##### Agregación
 
-![agregacion.png](img\agregacion-6489d946-cc06-4e3c-a976-f6435531b4f2.jpg)
+![agregacion.png](.\img\agregacion-6489d946-cc06-4e3c-a976-f6435531b4f2.jpg)
 
 Este se parece a la asociación en que un elemento dependerá del otro, pero en este caso será: Un elemento dependerá de muchos otros. Aquí tomamos como referencia la multiplicidad del elemento. Lo que comúnmente conocerías en Bases de Datos como *Relaciones uno a muchos*.
 
-![uml-relacion-agregacion.jpg](img\uml-relacion-agregacion-adb20be8-d6c2-41d1-b002-2cfa37639240.jpg)
+![uml-relacion-agregacion.jpg](.\img\uml-relacion-agregacion-adb20be8-d6c2-41d1-b002-2cfa37639240.jpg)
 
 Con esto decimos que la ClaseA contiene varios elementos de la ClaseB. Estos últimos son comúnmente representados con listas o colecciones de datos.
 
 ##### Composición
 
-![composicion.png](img\composicion-1da1dd19-6925-42d9-9727-7fd8cb031b0c.jpg)
+![composicion.png](.\img\composicion-1da1dd19-6925-42d9-9727-7fd8cb031b0c.jpg)
 
 Este es similar al anterior solo que su relación es totalmente compenetrada de tal modo que conceptualmente una de estas clases no podría vivir si no existiera la otra.
 
-![uml-relacion-composicion.jpg](img\uml-relacion-composicion-2d4cb1fa-5422-44e3-849b-3a3e2d276733.jpg)
+![uml-relacion-composicion.jpg](.\img\uml-relacion-composicion-2d4cb1fa-5422-44e3-849b-3a3e2d276733.jpg)
 
 Con esto terminamos nuestro primer módulo. Vamos al siguiente para entender cómo podemos hacer un análisis y utilizar estos elementos para construir nuestro diagrama de clases de Uber.
 
@@ -259,7 +259,7 @@ Analizamos Objetos para crear **Clases**. Las **Clases** son los modelos sobres 
 
 La **modularidad** va muy relacionada con las clases y es un principio de la Programación Orientado a Objetos y va de la mano con el *Diseño Modular* que significa dividir un sistema en partes pequeñas y estas serán nuestros módulos pudiendo funcionar de manera independiente.
 
-![image-20220305103823185](img\image-20220305103823185.png)
+![image-20220305103823185](.\img\image-20220305103823185.png)
 
 La **modularidad** de nuestro código nos va a permitir
 
@@ -279,7 +279,7 @@ Nos permite:
 
  ### 11. Analizando Uber en Objetos
 
-![image-20220305110351166](img\image-20220305110351166.png)
+![image-20220305110351166](.\img\image-20220305110351166.png)
 
 **Objetos identificados**
 
@@ -307,11 +307,11 @@ Sistema de adopciones de perritos, se identifican los siguientes objetos:
 
  ### 13. Clases en UML y su sintaxis en código
 
-![image-20220305114948578](img\image-20220305114948578.png)
+![image-20220305114948578](.\img\image-20220305114948578.png)
 
 Ejemplo para un objeto persona:
 
-![image-20220305115044802](img\image-20220305115044802.png)
+![image-20220305115044802](.\img\image-20220305115044802.png)
 
 Definición de clases y sus métodos en diferentes lenguajes:
 
@@ -350,7 +350,7 @@ class Person {
 
  ### 14. Modelando nuestros objetos Uber
 
-![image-20220305123138145](img\image-20220305123138145.png)
+![image-20220305123138145](.\img\image-20220305123138145.png)
 
  ### 15. Qué es la herencia
 
@@ -362,19 +362,19 @@ La **herencia** nos permite crear nuevas clases a partir de otras, se basa en mo
 
 Puede darse el caso de que la clase padre tenga un hijo o muchos.
 
-![image-20220305131245950](img\image-20220305131245950.png)
+![image-20220305131245950](.\img\image-20220305131245950.png)
 
 A la clase padre también se le conoce como superclase y a las clases hijas como subclases, en algunos lenguajes incluso son palabras reservadas.
 
-![image-20220305131308233](img\image-20220305131308233.png)
+![image-20220305131308233](.\img\image-20220305131308233.png)
 
  ### 16. Aplicando Herencia a nuestro proyecto Uber
 
-![image-20220305143235082](img\image-20220305143235082.png)
+![image-20220305143235082](.\img\image-20220305143235082.png)
 
-![image-20220305143253270](img\image-20220305143253270.png)
+![image-20220305143253270](.\img\image-20220305143253270.png)
 
-![image-20220305143315474](img\image-20220305143315474.png)
+![image-20220305143315474](.\img\image-20220305143315474.png)
 
 **Modelo UML final:**
 
@@ -388,9 +388,9 @@ Genera un nuevo análisis, aplica herencia para abstraer mejor el problema y log
 
 Comparte tus resultados en la sección de discusiones.
 
-![Preview](img\centro_adopciones_uml-a0be4070-f577-4607-ac0f-95e0b4cdb906.jpg)
+![Preview](.\img\centro_adopciones_uml-a0be4070-f577-4607-ac0f-95e0b4cdb906.jpg)
 
-![image-20220305183218610](img\image-20220305183218610.png)
+![image-20220305183218610](.\img\image-20220305183218610.png)
 
 ## Clases, Objetos y Método constructor
 
@@ -424,7 +424,7 @@ De esta forma le estamos diciendo a nuestro editor de código que todos nuestros
 
 **Es importante** que cuando abras tu proyecto en Visual Studio Code, lo abras desde la carpeta `CursoPOOUber`, de esta forma, el editor de código te mostrará en el árbol de carpetas a tus 5 carpetas que has creado:
 
-![folder_structure.png](img\folder_structure-214fcc01-2f6a-4a61-82d1-f8688e142380.jpg)
+![folder_structure.png](.\img\folder_structure-214fcc01-2f6a-4a61-82d1-f8688e142380.jpg)
 
 ¡Estamos listos para empezar a codear! Nos vemos en las siguiente clase donde empezaremos a definir clases con Java y Python.
 
@@ -660,8 +660,6 @@ if __name__ == "__main__":
     car2.driver = "Juan Martinez"
     print(vars(car2))
 ```
-
-
 
  ### 23. Declarando un Método Constructor en Java y JavaScript
 
