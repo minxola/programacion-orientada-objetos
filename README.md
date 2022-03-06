@@ -663,9 +663,97 @@ if __name__ == "__main__":
 
  ### 23. Declarando un Método Constructor en Java y JavaScript
 
+Java:
 
+```java
+//Account.java
+class Account {
+    Integer id;
+    String name;
+    String document;
+    String email;
+    String password;
+
+    public Account (String name, String document){
+        this.name = name;
+        this.document = document;
+    }
+}
+//Car.java
+class Car {
+    Integer id;
+    String license;
+    Account driver;
+    Integer passenger;
+
+    public Car(String license, Account driver){
+        this.license = license;
+        this.driver = driver;
+    }
+
+    void printDataCar(){
+        System.out.println(
+
+            "El nombre del conductor es " + driver.name + " y su licencia es " + license
+        );
+    }
+}
+//Main.java
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+        Car car = new Car("AMQ23", new Account("Andres Herrera", "AND2345"));
+        car.passenger = 4;
+        car.printDataCar();
+
+        Car car1 = new Car("SD454", new Account("Martin Lopez", "AND343"));
+        car1.passenger = 2;
+        car1.printDataCar();
+    }
+}
+```
+
+JavaScript:
+
+```js
+//Account.js
+function Account(name, document){
+    this.id;
+    this.name = name;
+    this.document = document;
+    this.email;
+    this.password;
+}
+//Car.js
+function Car(license, driver){
+    this.id;
+    this.license = license;
+    this.driver = driver;
+    this.passenger;
+}
+
+Car.prototype.printDataCar = function(){
+    console.log(this.driver);
+    console.log(this.driver.name);
+    console.log(this.driver.document);
+}
+//index.js
+var car = new Car("AW456", new Account("Andres Herrera", "AND453"));
+car.passenger = 3;
+car.printDataCar();
+```
+
+```html
+<!--index.html llamado de módulos-->
+<scrpt src="Account.js"></scrpt>
+<scrpt src="Car.js"></scrpt>
+<scrpt src="index.js"></scrpt>
+```
 
  ### 24. JavaScript orientado a objetos, lo más nuevo
+
+
+
  ### 25. Declarando un método constructor en Python
 
 ## Herencia
