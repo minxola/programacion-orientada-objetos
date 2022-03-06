@@ -822,6 +822,112 @@ Y los resultados serán los mismos.
 
  ### 25. Declarando un método constructor en Python
 
+En Python encontrarás un concepto denominado **Métodos Mágicos**, estos métodos son llamados automática y estrictamente bajo ciertas reglas. El método constructor en Python forma parte de esta familia de métodos y como aprendimos en la clase anterior lo declaramos usando `__init__`, aunque si nos ponemos estrictos este método no construye el objeto en sí. El encargado de hacer esto es `__new__` y el método `__init__` se encargará de personalizar la instanciación de la clase, esto significa que lo que esté dentro de `__init__` será lo primero que se ejecute cuando se cree un objeto de esta clase.
+
+Para nuestro proyecto tenemos la necesidad de que algunas variables se inicialicen obligatoriamente cuando ocurra la instanciación. Así que declaremos el método `__init__` en las clases de nuestro proyecto con las propiedades obligatorias.
+
+Para la clase Account quedaría algo así, notarás que usamos la palabra clave **self**, esta es muy parecida a lo que venimos trabajando a otros lenguajes con **this**. Y como su nombre lo dice hace referencia a los datos que componen la clase, en este caso `self.name` está llamando al atributo name que se encuentra en la línea 3 de la clase y, le está asignando el dato que se pasa en el método `__init__` de la línea 8.
+
+```python
+class Account:
+    id          = int
+    name        = str
+    document    = str
+    email       = str
+    password    = str
+
+    def __init__(self, name, document):
+        self.name = name
+        self.document= document
+```
+
+Ahora veamos la clase Car:
+
+```python
+from account import Account
+
+
+class Car:
+    id          = int
+    license     = str
+    driver      = Account("","")
+    passenger   = int
+
+    def __init__(self, license, driver):
+        self.license = license
+        self.driver = driver
+```
+
+Lo que notarás de diferente es que cambiamos el tipo de dato de **driver**, ahora es de tipo Account y como ves está solicitando los dos datos obligatorios para instanciar un objeto de este tipo. Esto lo verás más en acción en el próximo fragmento de código del archivo `main.py`. Además, mucho ojo, en la primera línea observamos que es importante importar la clase para poderla usar.
+
+Nuestro archivo `main.py` ahora se verá así:
+
+```python
+from car import Car
+from account import Account
+
+if __name__ == "__main__":
+    print("Hello World!")
+
+    car = Car ("AMS234", Account("Andrea Herrera", "ANS455"))
+    print(vars(car))
+    print(vars(car.driver))
+```
+
+Observa que estamos importando las dos clases que usaremos y las estamos instanciando en los métodos constructores.
+
+Los resultados serán los siguientes:
+
+![Captura de pantalla 2019-01-21 a la(s) 1.14.06.png](D:\Platzi\escuelaProgramacion\programacion-orientada-objetos\img\Captura de pantalla 2019-01-21 a la(s) 1.14.06-613a190d-a678-490c-a010-81150b4b883f.jpg)
+
+El código de este ejemplo lo encuentras en este enlace:
+https://github.com/anncode1/Curso-POO-Platzi/tree/3.2.ConstructorPython
+
+#### Reto 3
+
+Ahora que ya viste cómo creamos un método constructor en Python, mira esta clase https://platzi.com/clases/2034-php-poo/32133-polimorfismo/ y **hazlo también para PHP**. Compártenos tus resultados en la sección de discusiones.
+
+```php
+//Account.php
+<?php
+class Account {
+    public $id;
+    public $document;
+    public $email;
+    public $password;
+
+    public function __construct($name, $document){
+        $this->name = $name;
+        $this->document = $document;
+    }
+}
+
+//Car.php
+<?php
+class Car {
+    public $id;
+    public $driver;
+    public $passengers;
+
+    public function __construct($license, $driver){
+        $this->license = $license;
+        $this->driver = $driver;
+    }
+
+    public function printDataCar(){
+        echo "License: $this->license, Driver: {$this->driver->name}, document: {$this->driver->document}";
+    }
+}
+
+//index.php
+<?php
+require_once('Car.php');
+require_once('Account.php')
+
+$car = new Car ("ASD455", new Account("Andres Herrera", "ANS678"));
+$car->printDataCar();
+```
+
 ## Herencia
 
  ### 26. Aplicando herencia en lenguaje Java y PHP
