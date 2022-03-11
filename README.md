@@ -931,15 +931,227 @@ $car->printDataCar();
 ## Herencia
 
  ### 26. Aplicando herencia en lenguaje Java y PHP
+
+```java
+//java
+class Student extends Person
+```
+
+```python
+#python
+class Student(Person):
+```
+
+```js
+//JavaScript
+student.prototype = new Person();
+```
+
+```php
+//PHP
+class Student extends Person
+```
+
  ### 27. Solución del reto de herencia en PHP
+
+```php
+//index.php
+<?php
+require_once('car.php');
+require_once('uberX.php');
+require_once('uberPool.php');
+require_once('account.php');
+
+$uberX = new UberX("CVB233", new Account("Andres Herrera", "AND44"), "Chevrolet", "Sparl");
+$uberX->printDataCar();
+
+echo('<br>');
+
+$uberPool = new UberPool("AMD33", new Account("Andrea Farran", "ASD99"), "Nissan", "Centra");
+$uberPool->printDataCar();
+
+?>
+```
+
  ### 28. Aplicando herencia en lenguaje Python y JavaScript
+
+```python
+#UberBlack.py
+from car import Car
+
+class UberBlack(Car):
+    typeCarAccepted = []
+    seatsMeterial = []
+
+    def __init__(self, license, driver, typeCarAccepted, seatsMaterial):
+        super.__init__(license, driver)
+        self.typeCarAccepted = typeCarAccepted
+        self.seatsMeterial = seatsMaterial
+```
+
+```js
+//uberBlack.js
+class UberBlack extends Car{
+    constructor(license, driver, typeCarAccepted, seatsMaterial){
+        super(license, driver)
+        this.typeCarAccepted = typeCarAccepted;
+        this.seatsMaterial = seatsMaterial;
+    }
+}
+```
+
  ### 29. Otros tipos de Herencia
+
+A partir de ahora las clases que estén siendo heredades las llamaremos familias.
+
+Acabamos de aplicar herencia a la familia **Car**. Ahora apliquémosla a la familia **Payment**.
+
+En clases anteriores te mencioné que otro punto de partida que puedes tomar para aplicar herencia es del hecho de que hay clases que lógicamente deberían estar en una familia, como es el caso de Payment.
+
+Repasemos el diagrama de Payment
+
+![Familia Payment](img\Captura de pantalla 2019-01-21 a la(s) 12.21.03-6c3f1263-88f7-44db-a123-ba70c028069c.jpg)
+
+Notarás que a nivel de código parece inservible pero cuando estemos en el caso de uso Pagar un Viaje, probablemente en ese momento no sabremos cuál es el método de pago, y necesitemos ingresar un dato lo suficientemente genérico que conceptualmente nos dé la información que necesitamos, en este caso que es un Payment. Este es un tipo de Polimorfismo y uno de los principios SOLID del software que obedece a la Inyección de Dependencias. Lo veremos más adelante a detalle.
+
+Ahora nos faltará crear las clases y aplicar su herencia.
+
  ### 30. Reto 4
+
+Nos queda la Jerarquía Account pendiente.
+
+Tomando como referencia nuestros diagramas. Plásmala en tu lenguaje de programación favorito.
+
+```js
+//user.js
+class User extends Account{
+    constructor(id, name, document, email, password){
+        super(name, document);
+        this.id = id;
+        this.email = email;
+        this.password = password;
+    }
+}
+//driver.js
+class Driver extends Account{
+    constructor(id, name, document, email, password){
+        super(name, document);
+        this.id = id;
+        this.email = email;
+        this.password = password;
+    }
+}
+//account.js
+class Account{
+    constructor(name, document){
+        this.id;
+        this.name = name;
+        this.document = document;
+        this.email;
+        this.password;
+    }
+
+    printDataAccount(){
+        console.log({
+            name: this.name,
+            document: this.document,
+            email: this.email
+        })
+    }
+}
+//index.js
+//code...
+var user = new User('User', 'Jorge Perez', 'ANS88', 'email@email', 'asdfjksd');
+user.printDataAccount();
+```
 
 ## Encapsulamiento
 
  ### 31. Encapsulamiento
+
+El **Encapsulamiento** es hacer que un dato sea inviolable, inalterable cuando se le asigne un modificador de acceso.
+
+Algunos beneficios de encapsulación son:
+
+- Controlar la manera en que los datos son accedidos o modificados
+- El código es mas flexible y fácil de cambiar a partir de nuevos requerimientos
+- Poder modificar una parte del código sin afectar otras partes del mismo
+- Ayuda a mantener la integridad de los datos
+
+Modificadores de acceso en *Java*:
+
+`public`: Todas las clases, mas permisivo
+
+`protected`: Clases, Paquetes y Sub Clases
+
+`default`: Clases y Paquetes
+
+`private`: Clases
+
  ### 32. Encapsulando atributos en Java
+
+```java
+//Car.java
+class Car {
+    Integer id;
+    String license;
+    Account driver;
+    private Integer passenger;
+
+    public Car(String license, Account driver){
+        this.license = license;
+        this.driver = driver;
+/*         passenger = 3;
+        System.out.println("Passenger: " + passenger); */
+    }
+
+    void printDataCar(){
+        if(passenger != null){
+            System.out.println(
+
+                "El nombre del conductor es " + driver.name + " y su licencia es " + license
+            );
+        }
+    }
+
+    //Uso de getter and setter
+    public Integer getPassenger(){
+        return passenger;
+    }
+
+    public void setPassenger(Integer passenger){
+        if(passenger == 4){
+        this.passenger = passenger;
+        } else{
+            System.out.println("El valor debe ser 4");
+        }
+    }
+}
+
+//Main.java
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+        Car car = new Car("AMQ23", new Account("Andres Herrera", "AND2345"));
+        //car.passenger = 4;
+        car.setPassenger(4); //set passenger
+        car.printDataCar();
+
+        Car uberX = new UberX("ASD44", new Account("Juan Rojas", "DOC55"), "Nissan", "Sentra");
+        //uberX.passenger = 2;
+        uberX.setPassenger(4); //set passenger
+        uberX.printDataCar();
+
+        Payment paypal = new PayPal(95844, "paypal@mail.com");
+        paypal.printDataPayment();
+
+        Account driver = new Driver(555, "Maria Arrieros", "DOC444", "driver@mail.com", "4dk·323");
+        driver.printDataAccout();
+    }
+}
+```
+
+
 
 ## Polimorfismo
 

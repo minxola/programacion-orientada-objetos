@@ -18,6 +18,7 @@ class Car{
         this.driver = driver;
         this.passenger;
     }
+
     printDataCar(){
         console.log(this.driver);
         console.log(this.driver.name);

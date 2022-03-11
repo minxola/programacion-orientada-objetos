@@ -9,4 +9,11 @@ class Account {
         this.name = name;
         this.document = document;
     }
+
+    void printDataAccout(){
+        System.out.println(
+            "Name: " + this.name + "\n"
+            + "Email: " + this.email
+        );
+    }
 }
