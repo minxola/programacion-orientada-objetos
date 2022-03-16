@@ -1238,3 +1238,12 @@ En la POO hay 5 cosas fundamentales:
 - **Herencia:** Es crear una o más clases a partir de una clase que ya existe. Y se les llaman subclases.
 - **Polimorfismo: **Es construir métodos con el mismo nombre pero con comportamiento diferente.
 
+#### Aproved course!
+
+**Ahora sabes:**
+
+- Conocer los diferentes lenguajes de programación orientados a objetos
+- Analizar problemas para el desarrollo de proyectos orientado a objetos
+- Entender el funcionamiento de los objetos
+- Entender el funcionamiento de las clases
+- Dominar las características de la programación orientada a objetos
