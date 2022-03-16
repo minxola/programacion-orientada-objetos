@@ -1,17 +1,19 @@
 <?php
 require_once('car.php');
+require_once('account.php');
 require_once('uberX.php');
 require_once('uberPool.php');
-require_once('account.php');
 require_once('payment.php');
 require_once('cash.php');
 require_once('card.php');
 require_once('paypal.php');
 require_once('user.php');
 require_once('driver.php');
+require_once('uberVan.php');
 
 
 $uberX = new UberX("CVB233", new Account("Andres Herrera", "AND44"), "Chevrolet", "Sparl");
+$uberX->setPassenger(4);
 $uberX->printDataCar();
 
 $uberPool = new UberPool("AMD33", new Account("Andrea Farran", "ASD99"), "Nissan", "Spark");
@@ -34,5 +36,9 @@ $driver->printDataAccount();
 
 $driver = new User("User", "Joan Ramirez", "23346555", "email@email", "asdf4342462");
 $driver->printDataAccount();
+
+$uberVan = new UberVan("AND233", new Account("Peter Pan", "DOC22"), "Van car", "Leather");
+$uberVan->setPassenger(6);
+$uberVan->printDataCar();
 
 ?>

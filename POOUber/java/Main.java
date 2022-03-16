@@ -11,6 +11,8 @@ class Main {
         uberX.setPassenger(4);
         uberX.printDataCar();
 
+        Car uberVan = new UberVan("LIC88", new Account("Romeo Rojas", "DOC55"), "Van", "Leather");
+
         Payment paypal = new PayPal(95844, "paypal@mail.com");
         paypal.printDataPayment();
 

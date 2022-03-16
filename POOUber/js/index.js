@@ -1,5 +1,5 @@
 var car = new Car("AW456", new Account("Andres Herrera", "AND453"));
-car.passenger = 3;
+car.passenger = 4;
 car.printDataCar();
 
 var uberX = new UberX("AW456", new Account("Andrea Ferran", "AND99"), "Chevrolet", "Spark");
@@ -20,3 +20,7 @@ paypal.printDataPayment();
 
 var user = new User('User', 'Jorge Perez', 'ANS88', 'email@email', 'asdfjksd');
 user.printDataAccount();
+
+var uberVan = new UberVan("LIC77", new Account("Jose Perez", "AND88"), "VanMobil", "Cotton");
+uberVan.passenger = 6;
+uberVan.printDataCar();

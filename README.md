@@ -1151,16 +1151,90 @@ class Main {
 }
 ```
 
-
-
 ## Polimorfismo
 
  ### 33. Generando polimorfismo en Java
+
+**Polimorfismo**: Muchas formas. Poli = muchas, morfismo = formas. **NO** es Poliformismo
+
+Es construir métodos con el mismo nombre pero con comportamiento diferente.
+
+![Polimorfismo](img/image-20220315183503709.png)
+
  ### 34. Generando polimorfismo en PHP
+
+Para esto creamos getters and Setters en Car.php. Además agregamos una una función para que asigne los pasajeros en uberVan.php.
 
 ## Cierre del curso
 
  ### 35. El diagrama UML de Uber
+
+Este es el diagrama que finalmente obtuvimos, aquí solo faltaría añadirle los atributos que posee cada clase.
+
+![Captura de pantalla 2019-01-21 a la(s) 3.20.10.png](img/Captura de pantalla 2019-01-21 a la(s) 3.20.10-075bf981-504e-46b5-acb5-3d9bc67e8ea5.jpg)
+
+Recopilemos todo lo que hemos aprendido para explicar los últimos detalles.
+
+En primer lugar notarás que tenemos 3 tipos de flechas:
+
+#### Asociación
+
+![associacion.png](img/associacion-d2e1b691-b6e9-4854-85e2-d3ffdf0a9049-16473991668762.jpg)
+
+Como su nombre lo dice, notarás que cada vez que esté referenciada este tipo de flecha significará que ese elemento contiene al otro en su definición. Si recuerdas la clase Car, este contenía una instancia de Driver. La flecha apuntará hacia la dependencia.
+
+![car-driver.png](img/car-driver-204d198e-60fa-4c57-a0d0-0668c0e011d7.jpg)
+
+#### Herencia
+
+![herencia.png](img/herencia-2eb98d5e-bcad-4162-b236-aa87eba20e76-16473991668765.jpg)
+
+Siempre que veamos este tipo de flecha se estará expresando la herencia.
+En nuestro diagrama tuvimos al menos tres familias conviviendo. La dirección de la flecha irá desde el hijo hasta el padre.
+
+**Familia Car**
+
+![Captura de pantalla 2019-01-24 a la(s) 1.24.30.png](img/Captura de pantalla 2019-01-24 a la(s) 1.24.30-ff45a4c0-dfa8-464b-8590-5d48cfa03eb5.jpg)
+
+**Familia Account**
+![Captura de pantalla 2019-01-24 a la(s) 1.24.13.png](img/Captura de pantalla 2019-01-24 a la(s) 1.24.13-bc9edb69-8909-487b-9619-350dcb933638.jpg)
+
+**Familia Payment**
+![Captura de pantalla 2019-01-24 a la(s) 1.24.42.png](img/Captura de pantalla 2019-01-24 a la(s) 1.24.42-ef7679b6-3b93-45c1-a4d9-1d6a24f4aa2a.jpg)
+
+#### Composición
+
+![composicion.png](img/composicion-1da1dd19-6925-42d9-9727-7fd8cb031b0c-164739916687610.jpg)
+
+Pasemos a una de nuestras piezas claves, pues notarás en el centro del diagrama la clase **Trip** que está vinculada a User, Car, Route y Payment. La composición va a significar una asociación entre estas clases con la diferencia de que para que esta clase pueda vivir forzosamente necesita a las demás. Es decir que estas clases son obligatorias para que la clase Trip pueda existir, esta dependencia obligatoria podríamos expresarla en el método constructor de la clase Trip, pues para que un objeto pueda ser creado dependerá de que los demás existan.
+
+![Captura de pantalla 2019-01-24 a la(s) 1.46.08.png](img/Captura de pantalla 2019-01-24 a la(s) 1.46.08-72aaa220-d916-4cae-9ac2-5a8ebe375b80.jpg)
+
+Esta clase Trip poseerá la lógica más fuerte del negocio aquí será donde se concentrarán la mayor cantidad de clases.
+
+Esto es todo nuestro diagrama de clases, que quedó totalmente expresado en nuestro proyecto.
+
  ### 36. Conclusiones
+
+- UML
+- Programación: Java, PHP, python, JavaScript
+- Encapsulamiento, abstracción, herencia y polimorfismo
+- Clases, Objetos y Métodos
+
  ### 37. Bonus: Qué es la programación Orientada a Objetos
+
+En la POO hay 5 cosas fundamentales:
+
+- **Clases:** Son el molde más genérico y del cual podemos instanciar muchos objetos.
+- **Objetos:** Son creados de las clases y tienen datos y funcionalidad.
+- **Atributos:** Son las características especificas del objeto (Son las variables dentro del código)
+- **Métodos:** Son las funciones o acciones que puede hacer este objeto.
+- **Instanciar:** Es la creación de un objeto desde una clase a eso se le llama instancia o instancias.
+
+**Los pilares de la POO son:**
+
+- **Abstracción:** Es separar cada uno de los datos de un objeto para poder crear su molde (clase)
+- **Encapsulamiento:** Es aislar un dato para que este sea privado y no pueda ser visto o modificado.
+- **Herencia:** Es crear una o más clases a partir de una clase que ya existe. Y se les llaman subclases.
+- **Polimorfismo: **Es construir métodos con el mismo nombre pero con comportamiento diferente.
 
